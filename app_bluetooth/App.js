@@ -70,7 +70,7 @@ return true;
       return;
     }
     setDevices([]);
-    manager.startDevicesScan(null,null,(error,device)) =>{
+    manager.startDevicesScan(null,null,(error,device) =>{
       if(error){
         console.log('ERROR SCAN: ', error)
         if (error.errorCode === 601){
@@ -85,9 +85,9 @@ return true;
             return[...prevDevices, device];
           }
           return prevDevices;
-        })
+        });
       }
-    }
+    });
   }
 
 }
