@@ -88,6 +88,8 @@ return true;
         });
       }
     });
+    setTimeout(()=>{
+      manager.stopDeviceScan()},5000);
   }
 
 }
