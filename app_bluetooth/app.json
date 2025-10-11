@@ -20,13 +20,35 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT"
+      ],
+      "package": "com.fodase.app_bluetooth"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-build-properties"
-    ]
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": true,
+          "modes": [
+            "peripheral",
+            "central"
+          ],
+          "bluetoothAlwaysPermission": "Permitir que $(PRODUCT_NAME) use o Bluetooth",
+          "bluetoothPeripheralPermission": "Permitir que $(PRODUCT_NAME) se conecte aos dispositivos Bluetooth"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "0bd0d8ad-88bd-426c-8095-1c7f8c759051"
+      }
+    }
   }
 }
